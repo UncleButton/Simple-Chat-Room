@@ -3,19 +3,20 @@ body {
 	margin: auto;
 	padding: 0px;
 	font-family: 'Open Sans', Arial, sans-serif;
-	color: #9A9A9A;
+	color: #000000;
+	background: #999999;
 	font-size: 80%;
 }
 h1 {
 	font-family: 'Oswald';
 }
 hr {
-	border: 1px;
 	background: #ccc;
 	width: 100%;
-	height: 1px;
+	height: 1px;/*line under chats*/
 	margin: 0px;
 	padding: 0px;
+	border: 1px solid #ccc;
 }
 input {
 	display: block;
@@ -23,26 +24,45 @@ input {
   	font-size: 110%;
   	font-family: 'Open Sans';
   	margin-bottom: 20px;
-  	border: 1px solid #ccc;
+  	border: 1px solid #ccc;/*input box on top*/
 	border-radius: 3px;
 	padding: 7px;
 	outline: none;
-	width: 584px;
+	width: 100%;
 }
 #conversation {
 	margin: 0px;
-	padding: 0px
+	padding: 0px;
 	width: 100%;
+	word-wrap: break-word;
 }
+
 .name {
 	font-weight: bold;
 	margin-bottom: 0px;
+	color: #23FF00;
 }
 .message {
 	margin-top: 3px;
 }
 .he {
 	color: #4F4F4F;
+}
+.my_chats {
+	color: #FFFFFF;
+}
+.timeStamp {
+	color: #FFFFFF;
+	float: right;
+}
+.user {
+	color: #FFFFFF;
+	float: right;
+	font-size: 70%;
+	line-height: 3em;
+}
+.new_user {
+	color: #00FF9B;
 }
 .date {
 	float: right;
