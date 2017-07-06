@@ -4,6 +4,7 @@
   "author": "Edmeral <edmeral.aissam@gmail.com",
   "description": "A simple chat server using Node.JS",
   "dependencies": {
+    "compression": "^1.6.2",
     "easymongo": "^4.0.0",
     "ejs": "^1.0.0",
     "ent": "^2.0.0",

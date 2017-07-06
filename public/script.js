@@ -29,7 +29,7 @@ var socket = io.connect();
 var d = new Date();
 
 socket.emit('new-user', unescapeHTML(pseudo));
-
+/*
 socket.on('new-user', function(pseudo) {//when a person joins, do this
 	d = new Date();
 	$('#conversation').prepend('<div class="animated fadeInLeft"><p class="new_user"><em><strong>' + pseudo + '</strong>  has joined the chat.</em> <div class="timeStamp"> <em>'+(d.getHours()>12?d.getHours()-12:d.getHours())+":"+(d.getMinutes()<10?'0':'')+d.getMinutes()+" "+(d.getHours()>12?"PM":"AM")+'</em></div></p><hr></div>');
@@ -40,7 +40,7 @@ socket.on('new-user', function(pseudo) {//when a person joins, do this
 		$('#conversation').removeClass('animated fadeInDown');
 	});
 });
-
+*/
 socket.on('message', function(data) {//when someone sends a message, do this
 	d = new Date();
 	$('#conversation').prepend('<div class="animated fadeInLeft"><p class="name he">' + data.pseudo + '</p><p class="message he">' + data.message + '<div class="timeStamp"> <em>'+(d.getHours()>12?d.getHours()-12:d.getHours())+":"+(d.getMinutes()<10?'0':'')+d.getMinutes()+" "+(d.getHours()>12?"PM":"AM")+'</em></div></p><hr></div>');
