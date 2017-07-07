@@ -55,8 +55,8 @@ io.sockets.on('connection', function(socket) {
 
     socket.on('message', function(message) {
         var content = {
-            pseudo: ent.encode(socket.pseudo),
-            message: ent.encode(message)
+            pseudo: socket.pseudo,
+            message: message
         };
         socket.broadcast.emit('message', content);
         posts.save(content);
