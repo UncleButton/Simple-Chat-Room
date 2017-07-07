@@ -46,7 +46,7 @@ io.sockets.on('connection', function(socket) {
             return u.id !== socket.id;
         });
 
-        if(u) {
+        if(user) {
         	io.emit('user-left', user.name);
         }
         
