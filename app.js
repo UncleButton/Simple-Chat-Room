@@ -8,7 +8,7 @@ var PORT = process.env.PORT || 8080;
 //Setting up MongoDB
 var mongo = new easymongo(process.env.MONGOLAB_URL || 'mongodb://localhost/amando');
 var posts = mongo.collection('posts');
-
+var users = [];
 //Setting up express
 var app = express();
 var server = require('http').Server(app);
@@ -31,6 +31,21 @@ io.sockets.on('connection', function(socket) {
 	socket.on('new-user', function(pseudo) {
 		socket.pseudo = pseudo;
 		socket.broadcast.emit('new-user', ent.encode(pseudo));
+		users.push({name: pseudo, id: socket.id});
+		io.emit('update-users', users);
+	});
+	socket.on('disconnect', function() {
+		//socket.pseudo = pseudo;
+		var user = null;
+		users=users.filter(function(u){ console.log(u);
+			if(u.id===socket.id){
+				user=u;
+			}
+			return u.id !== socket.id;
+		});
+		console.log(user);
+		io.emit('user-left', user.name);
+		socket.broadcast.emit('update-users', users);
 	});
 
 	socket.on('message', function(message) {
