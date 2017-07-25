@@ -14,10 +14,10 @@ h1 {
 hr {
 	background: #ccc;
 	height: 1px;/*line under chats*/
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
 	padding: 0px;
-	border: 1px double #ccc;
+	border: 1px #ccc;
 }
 input {
 	display: block;
@@ -59,7 +59,8 @@ input {
 }
 .timeStamp {
 	color: #FFFFFF;
-	float: right;
+	font-weight: normal;
+	
 }
 .user {
 	color: #FFFFFF;
@@ -80,6 +81,14 @@ input {
 	margin-bottom:0px;
 	margin-left: 5px;
 	padding: 0px;
+}
+.hr-messaging {
+	background: #ccc;
+	height: 1px;/*line under chats*/
+	margin-top: 0em !important;
+	margin-bottom: 0em !important;
+	padding: 0px;
+	border: 1px #ccc;
 }
 .date {
 	float: right;
